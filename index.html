@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.userway.org/widget.js" data-account="kogsbIn7RT"></script>
     <title>אימוני אורח חיים בריא לחיילות</title>
     <style>
         * {
@@ -29,24 +28,19 @@
             overflow: hidden;
         }
 
-            .hero::before {
-                content: '';
-                position: absolute;
-                width: 200%;
-                height: 200%;
-                background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-                background-size: 50px 50px;
-                animation: moveGrid 20s linear infinite;
-            }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
 
         @keyframes moveGrid {
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(50px, 50px);
-            }
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
         }
 
         .hero-content {
@@ -63,7 +57,6 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -102,13 +95,8 @@
         }
 
         @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .cta-button:hover {
@@ -162,27 +150,27 @@
             overflow: hidden;
         }
 
-            .feature-card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-                opacity: 0;
-                transition: opacity 0.4s ease;
-            }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
 
-            .feature-card:hover {
-                transform: translateY(-15px) scale(1.02);
-                box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
-                border-color: rgba(102, 126, 234, 0.6);
-            }
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+            border-color: rgba(102, 126, 234, 0.6);
+        }
 
-                .feature-card:hover::before {
-                    opacity: 1;
-                }
+        .feature-card:hover::before {
+            opacity: 1;
+        }
 
         .feature-icon {
             font-size: 4rem;
@@ -211,14 +199,14 @@
             position: relative;
         }
 
-            .results::before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></svg>');
-                opacity: 0.5;
-            }
+        .results::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></svg>');
+            opacity: 0.5;
+        }
 
         .stats-grid {
             display: grid;
@@ -240,10 +228,10 @@
             transition: all 0.3s ease;
         }
 
-            .stat-card:hover {
-                background: rgba(255,255,255,0.15);
-                transform: scale(1.05);
-            }
+        .stat-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: scale(1.05);
+        }
 
         .stat-number {
             font-size: 4rem;
@@ -280,9 +268,9 @@
             transition: all 0.4s ease;
         }
 
-            .app-mockup:hover {
-                transform: perspective(1000px) rotateY(0deg) scale(1.05);
-            }
+        .app-mockup:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.05);
+        }
 
         .app-screen {
             background: #fff;
@@ -301,17 +289,17 @@
             padding-right: 30px;
         }
 
-            .app-feature-item h3 {
-                font-size: 1.8rem;
-                margin-bottom: 12px;
-                color: #667eea;
-            }
+        .app-feature-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: #667eea;
+        }
 
-            .app-feature-item p {
-                font-size: 1.15rem;
-                line-height: 1.7;
-                opacity: 0.85;
-            }
+        .app-feature-item p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            opacity: 0.85;
+        }
 
         .guarantee {
             background: #0a0a0a;
@@ -336,13 +324,8 @@
         }
 
         @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         .guarantee-text {
@@ -357,35 +340,35 @@
             text-align: center;
         }
 
-            .final-cta h2 {
-                font-size: 3.5rem;
-                margin-bottom: 30px;
-                text-shadow: 0 0 30px rgba(255,255,255,0.3);
-            }
+        .final-cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 30px rgba(255,255,255,0.3);
+        }
 
-            .final-cta p {
-                font-size: 1.5rem;
-                margin-bottom: 50px;
-                opacity: 0.95;
-            }
+        .final-cta p {
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            opacity: 0.95;
+        }
 
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
-
+            
             .hero-subtitle {
                 font-size: 1.3rem;
             }
-
+            
             .section-title {
                 font-size: 2rem;
             }
-
+            
             .app-content {
                 grid-template-columns: 1fr;
             }
-
+            
             .app-mockup {
                 transform: none;
             }
@@ -436,15 +419,12 @@
             0%, 100% {
                 transform: translate(0, 0) scale(1);
             }
-
             25% {
                 transform: translate(50px, -50px) scale(1.1);
             }
-
             50% {
                 transform: translate(-30px, 30px) scale(0.9);
             }
-
             75% {
                 transform: translate(40px, 20px) scale(1.05);
             }
@@ -462,7 +442,7 @@
         <div class="hero-content">
             <h1>השינוי שחיכית לו<br>מתחיל כאן</h1>
             <p class="hero-subtitle">תוכנית אימונים ותזונה ייחודית לחיילות<br>עם תוצאות מובטחות תוך 90 יום</p>
-            <button class="cta-button">התחילי את המסע שלך</button>
+            <button class="cta-button" onclick="scrollToForm()">התחילי את המסע שלך</button>
         </div>
     </section>
 
@@ -572,40 +552,25 @@
     <section class="final-cta">
         <h2>מוכנה לשנות את החיים שלך?</h2>
         <p>הצטרפי עכשיו למאות חיילות שכבר התחילו את המסע</p>
-        <button class="cta-button">לחצי כאן להתחלה</button>
+        <button class="cta-button" onclick="scrollToForm()">לחצי כאן להתחלה</button>
     </section>
 
     <script>
-        // WhatsApp function
-        function openWhatsApp(e) {
-            if (e) e.preventDefault();
-            const phoneNumber = '972548098765';
-            const message = 'היי אשמח לשמוע עוד על אימוני אורח חיים בריא';
-            const encodedMessage = encodeURIComponent(message);
-            
-            // Try different approaches for better mobile compatibility
-            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            
-            if (isMobile) {
-                // For mobile - use whatsapp:// protocol first, fallback to web
-                window.location.href = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
-                
-                // Fallback to web WhatsApp after a short delay if app doesn't open
-                setTimeout(() => {
-                    window.location.href = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
-                }, 1000);
-            } else {
-                // For desktop - use web WhatsApp
-                window.open(`https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`, '_blank');
-            }
+        function openWhatsApp() {
+            const message = encodeURIComponent('היי אשמח לשמוע עוד על אימוני אורח חיים בריא');
+            const whatsappLink = `https://wa.me/972548098765?text=${message}`;
+            window.location.href = whatsappLink;
         }
 
-        // Wait for DOM to load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add click event to all CTA buttons
-            const buttons = document.querySelectorAll('.cta-button');
-            buttons.forEach(button => {
-                button.addEventListener('click', openWhatsApp);
+        function scrollToForm() {
+            openWhatsApp();
+        }
+
+        // Add click event to all CTA buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                openWhatsApp();
             });
         });
 
