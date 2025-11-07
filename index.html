@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.userway.org/widget.js" data-account="kogsbIn7RT"></script>
+    <title>אימוני אורח חיים בריא לחיילות</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+                background-size: 50px 50px;
+                animation: moveGrid 20s linear infinite;
+            }
+
+        @keyframes moveGrid {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 40px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(255,255,255,0.3);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: #fff;
+            color: #667eea;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: pulse 2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+            animation: none;
+        }
+
+        .section {
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .results .section-title {
+            color: #fff;
+            background: none;
+            -webkit-text-fill-color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .features {
+            background: #0a0a0a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            padding: 50px;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .feature-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+                opacity: 0;
+                transition: opacity 0.4s ease;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-15px) scale(1.02);
+                box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+                border-color: rgba(102, 126, 234, 0.6);
+            }
+
+                .feature-card:hover::before {
+                    opacity: 1;
+                }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .results {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+
+            .results::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></svg>');
+                opacity: 0.5;
+            }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+            .stat-card:hover {
+                background: rgba(255,255,255,0.15);
+                transform: scale(1.05);
+            }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+
+        .stat-label {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .app-section {
+            background: #000;
+            padding: 120px 20px;
+        }
+
+        .app-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .app-mockup {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50px;
+            padding: 60px;
+            box-shadow: 0 30px 80px rgba(102, 126, 234, 0.4);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: all 0.4s ease;
+        }
+
+            .app-mockup:hover {
+                transform: perspective(1000px) rotateY(0deg) scale(1.05);
+            }
+
+        .app-screen {
+            background: #fff;
+            border-radius: 30px;
+            padding: 40px;
+            color: #333;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .app-features {
+            padding: 20px;
+        }
+
+        .app-feature-item {
+            margin-bottom: 35px;
+            padding-right: 30px;
+        }
+
+            .app-feature-item h3 {
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+                color: #667eea;
+            }
+
+            .app-feature-item p {
+                font-size: 1.15rem;
+                line-height: 1.7;
+                opacity: 0.85;
+            }
+
+        .guarantee {
+            background: #0a0a0a;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .guarantee-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px;
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            border-radius: 40px;
+            border: 2px solid #667eea;
+            box-shadow: 0 0 50px rgba(102, 126, 234, 0.3);
+        }
+
+        .guarantee-icon {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .guarantee-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+            .final-cta h2 {
+                font-size: 3.5rem;
+                margin-bottom: 30px;
+                text-shadow: 0 0 30px rgba(255,255,255,0.3);
+            }
+
+            .final-cta p {
+                font-size: 1.5rem;
+                margin-bottom: 50px;
+                opacity: 0.95;
+            }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .app-content {
+                grid-template-columns: 1fr;
+            }
+
+            .app-mockup {
+                transform: none;
+            }
+        }
+
+        .floating-elements {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .float-element {
+            position: absolute;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .float-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .float-2 {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 5s;
+        }
+
+        .float-3 {
+            width: 250px;
+            height: 250px;
+            bottom: 10%;
+            left: 20%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+
+            50% {
+                transform: translate(-30px, 30px) scale(0.9);
+            }
+
+            75% {
+                transform: translate(40px, 20px) scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="float-element float-1"></div>
+        <div class="float-element float-2"></div>
+        <div class="float-element float-3"></div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>השינוי שחיכית לו<br>מתחיל כאן</h1>
+            <p class="hero-subtitle">תוכנית אימונים ותזונה ייחודית לחיילות<br>עם תוצאות מובטחות תוך 90 יום</p>
+            <button class="cta-button">התחילי את המסע שלך</button>
+        </div>
+    </section>
+
+    <section class="section features">
+        <h2 class="section-title">למה דווקא אנחנו?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">💪</span>
+                <h3 class="feature-title">אימוני כוח מותאמים</h3>
+                <p class="feature-desc">תוכנית אימונים מקצועית שמותאמת במיוחד לחיילות, עם התחשבות בלוחות זמנים ואילוצים של השירות הצבאי</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📱</span>
+                <h3 class="feature-title">אפליקציית מעקב אישית</h3>
+                <p class="feature-desc">עקבי אחרי ההתקדמות שלך בזמן אמת, קבלי תזכורות ותמיכה יומית ישירות לנייד</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h3 class="feature-title">ליווי אישי צמוד</h3>
+                <p class="feature-desc">מאמנת אישית זמינה עבורך 24/7 דרך האפליקציה, עם התאמות שוטפות לתוכנית</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🥗</span>
+                <h3 class="feature-title">תפריטים מותאמים</h3>
+                <p class="feature-desc">תזונה מדויקת שמתחשבת באורח החיים הצבאי, עם מתכונים פשוטים וזמינים</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">👯‍♀️</span>
+                <h3 class="feature-title">קהילת חיילות</h3>
+                <p class="feature-desc">הצטרפי לקהילה של מאות חיילות שעוברות את אותו התהליך, שיתוף והשראה</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">✨</span>
+                <h3 class="feature-title">גישה גמישה</h3>
+                <p class="feature-desc">תוכנית שמתאימה את עצמה לשבוע שירות, שבת, חופשות וכל שינוי בשגרה</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section results">
+        <h2 class="section-title">התוצאות מדברות בעד עצמן</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">חיילות השיגו יעדים</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">90</div>
+                <div class="stat-label">ימים לשינוי מובטח</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">שיעור הצלחה</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">תמיכה ומעקב</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-section">
+        <div class="app-content">
+            <div class="app-mockup">
+                <div class="app-screen">
+                    <h3 style="color: #667eea; font-size: 1.8rem; margin-bottom: 20px;">האפליקציה שלך</h3>
+                    <div style="margin-bottom: 15px;">📊 מעקב יומי אחר התקדמות</div>
+                    <div style="margin-bottom: 15px;">🍽️ תפריטים ומתכונים</div>
+                    <div style="margin-bottom: 15px;">💬 צ'אט ישיר עם המאמנת</div>
+                    <div style="margin-bottom: 15px;">📅 תזמון אימונים גמיש</div>
+                    <div style="margin-bottom: 15px;">📸 תיעוד תמונות Before/After</div>
+                    <div>🎉 משימות והישגים</div>
+                </div>
+            </div>
+            <div class="app-features">
+                <h2 style="font-size: 2.5rem; margin-bottom: 40px;">כל מה שאת צריכה<br>באפליקציה אחת</h2>
+                <div class="app-feature-item">
+                    <h3>מעקב חכם</h3>
+                    <p>האפליקציה עוקבת אחרי כל המדדים החשובים - משקל, מידות, תחושה כללית, ומתאימה את התוכנית בהתאם</p>
+                </div>
+                <div class="app-feature-item">
+                    <h3>תזכורות אוטומטיות</h3>
+                    <p>לעולם לא תפספסי אימון או ארוחה - האפליקציה תזכיר לך בדיוק מתי ומה לעשות</p>
+                </div>
+                <div class="app-feature-item">
+                    <h3>תוכן ייעודי</h3>
+                    <p>וידאו הדרכות, מאמרים, טיפים - כל התוכן מותאם במיוחד לחיילות</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee">
+        <h2 class="section-title">ההבטחה שלנו</h2>
+        <div class="guarantee-box">
+            <div class="guarantee-icon">🏆</div>
+            <p class="guarantee-text">
+                <strong>תוצאות מובטחות תוך 90 יום או כספך בחזרה!</strong><br><br>
+                אנחנו כל כך בטוחים בשיטה שלנו, שאם לא תראי שינוי משמעותי תוך 3 חודשים - תקבלי החזר כספי מלא, ללא שאלות.
+                <br><br>
+                זה לא רק הבטחה - זו המחויבות שלנו אליך.
+            </p>
+            <button class="cta-button">אני רוצה להצטרף</button>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <h2>מוכנה לשנות את החיים שלך?</h2>
+        <p>הצטרפי עכשיו למאות חיילות שכבר התחילו את המסע</p>
+        <button class="cta-button">לחצי כאן להתחלה</button>
+    </section>
+
+    <script>
+        // WhatsApp function
+        function openWhatsApp(e) {
+            if (e) e.preventDefault();
+            const phoneNumber = '972548098765';
+            const message = 'היי אשמח לשמוע עוד על אימוני אורח חיים בריא';
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Try different approaches for better mobile compatibility
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // For mobile - use whatsapp:// protocol first, fallback to web
+                window.location.href = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
+                
+                // Fallback to web WhatsApp after a short delay if app doesn't open
+                setTimeout(() => {
+                    window.location.href = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+                }, 1000);
+            } else {
+                // For desktop - use web WhatsApp
+                window.open(`https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`, '_blank');
+            }
+        }
+
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to all CTA buttons
+            const buttons = document.querySelectorAll('.cta-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', openWhatsApp);
+            });
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.feature-card, .stat-card');
+            parallaxElements.forEach((el, index) => {
+                const speed = 0.05 + (index * 0.01);
+                el.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
