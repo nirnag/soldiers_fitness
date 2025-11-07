@@ -442,7 +442,7 @@
         <div class="hero-content">
             <h1>השינוי שחיכית לו<br>מתחיל כאן</h1>
             <p class="hero-subtitle">תוכנית אימונים ותזונה ייחודית לחיילות<br>עם תוצאות מובטחות תוך 90 יום</p>
-            <button class="cta-button" onclick="scrollToForm()">התחילי את המסע שלך</button>
+            <button class="cta-button">התחילי את המסע שלך</button>
         </div>
     </section>
 
@@ -552,32 +552,47 @@
     <section class="final-cta">
         <h2>מוכנה לשנות את החיים שלך?</h2>
         <p>הצטרפי עכשיו למאות חיילות שכבר התחילו את המסע</p>
-        <button class="cta-button" onclick="scrollToForm()">לחצי כאן להתחלה</button>
+        <button class="cta-button">לחצי כאן להתחלה</button>
     </section>
 
     <script>
-        function openWhatsApp() {
-            const message = encodeURIComponent('היי אשמח לשמוע עוד על אימוני אורח חיים בריא');
-            const whatsappLink = `https://wa.me/972548098765?text=${message}`;
-            window.location.href = whatsappLink;
+        // WhatsApp function
+        function openWhatsApp(e) {
+            if (e) e.preventDefault();
+            const phoneNumber = '972548098765';
+            const message = 'היי אשמח לשמוע עוד על אימוני אורח חיים בריא';
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Try different approaches for better mobile compatibility
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // For mobile - use whatsapp:// protocol first, fallback to web
+                window.location.href = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
+                
+                // Fallback to web WhatsApp after a short delay if app doesn't open
+                setTimeout(() => {
+                    window.location.href = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+                }, 1000);
+            } else {
+                // For desktop - use web WhatsApp
+                window.open(`https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`, '_blank');
+            }
         }
 
-        function scrollToForm() {
-            openWhatsApp();
-        }
-
-        // Add click event to all CTA buttons
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                openWhatsApp();
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to all CTA buttons
+            const buttons = document.querySelectorAll('.cta-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', openWhatsApp);
             });
         });
 
-        // Parallax effect
+        // Parallax effect - only for feature cards, not stat cards
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.feature-card, .stat-card');
+            const parallaxElements = document.querySelectorAll('.feature-card');
             parallaxElements.forEach((el, index) => {
                 const speed = 0.05 + (index * 0.01);
                 el.style.transform = `translateY(${scrolled * speed}px)`;
