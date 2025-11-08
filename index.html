@@ -472,7 +472,7 @@
             <div class="feature-card">
                 <span class="feature-icon">👯‍♀️</span>
                 <h3 class="feature-title">קהילת חיילות</h3>
-                <p class="feature-desc">הצטרפי לקהילה של מאות חיילות שעוברות את אותו התהליך, שיתוף והשראה</p>
+                <p class="feature-desc">הצטרפי לקהילה של חיילות שעוברות את אותו התהליך, יחד עם שיתוף והשראה</p>
             </div>
             <div class="feature-card">
                 <span class="feature-icon">✨</span>
@@ -589,15 +589,15 @@
             });
         });
 
-        // Parallax effect - only for feature cards, not stat cards
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.feature-card');
-            parallaxElements.forEach((el, index) => {
-                const speed = 0.05 + (index * 0.01);
-                el.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
+        //// Parallax effect - only for feature cards, not stat cards
+        //window.addEventListener('scroll', () => {
+        //    const scrolled = window.pageYOffset;
+        //    const parallaxElements = document.querySelectorAll('.feature-card');
+        //    parallaxElements.forEach((el, index) => {
+        //        const speed = 0.05 + (index * 0.01);
+        //        el.style.transform = `translateY(${scrolled * speed}px)`;
+        //    });
+        //});
     </script>
 </body>
 </html>
